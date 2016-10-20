@@ -1,0 +1,21 @@
+<h2>My Departments</h2>
+<ul class="departments">
+  <li *ngFor="let department of departments"
+    [class.selected]="department === selectedDepartment"
+    (click)="onSelect(department)">
+    <span class="badge">{{department.id}}</span> {{department.name}}
+  </li>
+</ul>
+<div *ngIf="selectedDepartment">
+  <h2>
+    {{selectedDepartment.name | uppercase}} is my department
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
